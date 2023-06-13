@@ -25,7 +25,7 @@ class EditeNoteViewBody extends StatelessWidget {
               ),
               CustomTextField(
                 hint: 'Content',
-                MaxLines: 5,
+                maxLines: 5,
               ),
             ],
           )),
