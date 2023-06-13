@@ -7,6 +7,8 @@ class EditeNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EditeNoteViewBody();
+    return const Scaffold(
+      body: EditeNoteViewBody(),
+    );
   }
 }
