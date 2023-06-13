@@ -7,6 +7,6 @@ class EditeNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EditeNoteBody();
+    return EditeNoteViewBody();
   }
 }
