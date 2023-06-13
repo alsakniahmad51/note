@@ -18,7 +18,7 @@ class CustomBotton extends StatelessWidget {
         ),
       ),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16), color: KprimaryColor),
+          borderRadius: BorderRadius.circular(16), color: kPrimaryColor),
     );
   }
 }

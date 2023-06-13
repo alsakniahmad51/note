@@ -9,12 +9,12 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       maxLines: MaxLines,
-      cursorColor: KprimaryColor,
+      cursorColor: kPrimaryColor,
       decoration: InputDecoration(
         hintText: hint,
         border: BuildBorder(),
         enabledBorder: BuildBorder(),
-        focusedBorder: BuildBorder(KprimaryColor),
+        focusedBorder: BuildBorder(kPrimaryColor),
       ),
     );
   }
