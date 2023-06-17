@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Cubits/Add_Note_cubite/add_note_cubit.dart';
@@ -33,7 +32,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
             hint: 'Title',
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           CustomTextField(
@@ -43,7 +42,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'Content',
             maxLines: 5,
           ),
-          SizedBox(
+          const SizedBox(
             height: 55,
           ),
           CustomBotton(
