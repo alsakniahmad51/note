@@ -27,7 +27,9 @@ class NoteItem extends StatelessWidget {
             children: [
               ListTile(
                 trailing: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    note.delete();
+                  },
                   icon: const Icon(FontAwesomeIcons.trash, color: Colors.black),
                 ),
                 title: Text(
