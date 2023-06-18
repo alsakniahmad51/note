@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'Custom_Icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title, required this.icone});
+  const CustomAppBar(
+      {super.key, required this.title, required this.icone, this.onPressed});
   final String title;
   final IconData icone;
+  final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,6 +19,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
         CustomIcon(
+          onPressed: onPressed,
           icone: icone,
         )
       ],

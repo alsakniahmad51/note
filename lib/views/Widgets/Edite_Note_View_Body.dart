@@ -1,30 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/Cubits/notes_cubit/notes_cubit.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/Widgets/CustomTextField.dart';
 import 'package:notes_app/views/Widgets/Custom_App_Bar.dart';
 
-class EditeNoteViewBody extends StatelessWidget {
-  const EditeNoteViewBody({super.key});
+class EditeNoteViewBody extends StatefulWidget {
+  const EditeNoteViewBody({super.key, required this.note});
+  final NoteModel note;
 
   @override
+  State<EditeNoteViewBody> createState() => _EditeNoteViewBodyState();
+}
+
+class _EditeNoteViewBodyState extends State<EditeNoteViewBody> {
+  String? title, subTitle;
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              CustomAppBar(title: 'Edite Note', icone: Icons.check),
-              SizedBox(
+              CustomAppBar(
+                  onPressed: () {
+                    widget.note.title = title ?? widget.note.title;
+                    widget.note.subtitle = subTitle ?? widget.note.subtitle;
+                    widget.note.save();
+                    BlocProvider.of<NotesCubit>(context).fetchNotes();
+                    Navigator.pop(context);
+                  },
+                  title: 'Edite Note',
+                  icone: Icons.check),
+              const SizedBox(
                 height: 40,
               ),
-              CustomTextField(hint: 'Title'),
-              SizedBox(
+              CustomTextField(
+                  onChanged: (value) {
+                    title = value;
+                  },
+                  hint: widget.note.title),
+              const SizedBox(
                 height: 16,
               ),
               CustomTextField(
-                hint: 'Content',
+                onChanged: (value) {
+                  subTitle = value;
+                },
+                hint: widget.note.subtitle,
                 maxLines: 5,
               ),
             ],
