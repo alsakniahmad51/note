@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/Cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
-import 'package:notes_app/views/Widgets/Edite_Note_View_Body.dart';
-
 import '../Edite_Note_View.dart';
 
 class NoteItem extends StatelessWidget {
